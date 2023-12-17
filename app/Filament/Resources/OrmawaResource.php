@@ -20,7 +20,9 @@ use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms\Components\MarkdownEditor;
 use App\Filament\Resources\OrmawaResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use App\Filament\Resources\OrmawaResource\RelationManagers;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
 class OrmawaResource extends Resource
 {
@@ -42,7 +44,7 @@ class OrmawaResource extends Resource
             ->schema([
                 Card::make()
                     ->schema([
-                        FileUpload::make('image')->label('Foto')->image()->imageEditor(),
+                        SpatieMediaLibraryFileUpload::make('image')->label('Foto'),
                         TextInput::make('name')->label('Nama')->required(),
                         MarkdownEditor::make('description')->label('Deskripsi')->required(),
                     ])
@@ -53,7 +55,7 @@ class OrmawaResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('image')->label('Foto'),
+                SpatieMediaLibraryImageColumn::make('image')->label('Foto'),
                 TextColumn::make("name")->label('Nama')->sortable()->searchable(),
                 TextColumn::make("description")->label('Deskripsi')->sortable()->searchable()
             ])
