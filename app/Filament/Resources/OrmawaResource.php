@@ -19,6 +19,7 @@ use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms\Components\MarkdownEditor;
 use App\Filament\Resources\OrmawaResource\Pages;
+use NunoMaduro\Collision\Adapters\Phpunit\State;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use App\Filament\Resources\OrmawaResource\RelationManagers;
@@ -38,16 +39,18 @@ class OrmawaResource extends Resource
 
     protected static ?string $slug = 'ormawa';
 
+    protected static ?string $recordTitleAttribute = 'name';
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Card::make()
-                    ->schema([
-                        SpatieMediaLibraryFileUpload::make('image')->label('Foto'),
-                        TextInput::make('name')->label('Nama')->required(),
-                        MarkdownEditor::make('description')->label('Deskripsi')->required(),
-                    ])
+                Section::make()
+                ->schema([
+                    SpatieMediaLibraryFileUpload::make('image')->label('Foto'),
+                    TextInput::make('name')->label('Nama')->required(),
+                    MarkdownEditor::make('description')->label('Deskripsi')->required(),
+                ])
             ]);
     }
 
@@ -55,7 +58,7 @@ class OrmawaResource extends Resource
     {
         return $table
             ->columns([
-                SpatieMediaLibraryImageColumn::make('image')->label('Foto'),
+                SpatieMediaLibraryImageColumn::make('image')->label('Foto')->size(80),
                 TextColumn::make("name")->label('Nama')->sortable()->searchable(),
                 TextColumn::make("description")->label('Deskripsi')->sortable()->searchable()
             ])
@@ -84,8 +87,6 @@ class OrmawaResource extends Resource
     {
         return [
             'index' => Pages\ListOrmawas::route('/'),
-            'create' => Pages\CreateOrmawa::route('/create'),
-            'edit' => Pages\EditOrmawa::route('/{record}/edit'),
         ];
     }
 }
