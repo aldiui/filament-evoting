@@ -2,27 +2,16 @@
 
 namespace App\Filament\Resources;
 
-use Filament\Forms;
 use Filament\Tables;
 use App\Models\Ormawa;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
-use Filament\Forms\Components\Card;
-use Filament\Forms\Components\Section;
-use Filament\Forms\Components\Textarea;
-use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
-use Filament\Tables\Columns\ImageColumn;
-use Filament\Forms\Components\FileUpload;
-use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms\Components\MarkdownEditor;
 use App\Filament\Resources\OrmawaResource\Pages;
-use NunoMaduro\Collision\Adapters\Phpunit\State;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
-use App\Filament\Resources\OrmawaResource\RelationManagers;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
 class OrmawaResource extends Resource
@@ -45,13 +34,10 @@ class OrmawaResource extends Resource
     {
         return $form
             ->schema([
-                Section::make()
-                ->schema([
-                    SpatieMediaLibraryFileUpload::make('image')->label('Foto'),
-                    TextInput::make('name')->label('Nama')->required(),
-                    MarkdownEditor::make('description')->label('Deskripsi')->required(),
-                ])
-            ]);
+                SpatieMediaLibraryFileUpload::make('image')->label('Foto'),
+                TextInput::make('name')->label('Nama')->required(),
+                MarkdownEditor::make('description')->label('Deskripsi')->required(),
+            ])->columns(1);
     }
 
     public static function table(Table $table): Table
