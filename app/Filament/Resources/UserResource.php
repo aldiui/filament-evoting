@@ -7,9 +7,11 @@ use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
+use Filament\Forms\Components\Select;
 use Filament\Tables\Columns\TextColumn;
-use App\Filament\Resources\UserResource\Pages;
+use Filament\Forms\Components\TextInput;
 use Filament\Tables\Filters\SelectFilter;
+use App\Filament\Resources\UserResource\Pages;
 
 class UserResource extends Resource
 {
@@ -29,8 +31,26 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                //
-            ]);
+                TextInput::make('nim')->label('NIM')->required(),
+                TextInput::make('name')->label('Nama')->required(),
+                TextInput::make('email')->email()->label('Email')->required(),
+                Select::make('kelas')
+                    ->label('Kelas')
+                    ->options([
+                        "19.1A.17" => "19.1A.17",
+                        "19.1B.17" => "19.1B.17",
+                        "19.1C.17" => "19.1C.17",
+                        "12.3A.17" => "12.3A.17",
+                        "12.3B.17" => "12.3B.17",
+                        "12.3C.17" => "12.3C.17",
+                        "12.5A.17" => "12.5A.17",
+                        "12.5B.17" => "12.5B.17",
+                        "12.5D.17" => "12.5D.17",
+                    ])
+                    ->searchable()
+                    ->required(),
+                TextInput::make('password')->password()->label('Password'),
+            ])->columns(1);
     }
 
     public static function table(Table $table): Table
@@ -78,8 +98,6 @@ class UserResource extends Resource
     {
         return [
             'index' => Pages\ListUsers::route('/'),
-            // 'create' => Pages\CreateUser::route('/create'),
-            // 'edit' => Pages\EditUser::route('/{record}/edit'),
         ];
     }
 }

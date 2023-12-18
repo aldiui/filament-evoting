@@ -26,25 +26,26 @@ class ListUsers extends ListRecords
             Actions\CreateAction::make(),
             ImportAction::make()->label('Import')
                 ->fields([
-                    ImportField::make('nim')->required(),
-                    ImportField::make('name')->required(),
-                    ImportField::make('email')->required(),
-                    ImportField::make('kelas')->required(),
+                    ImportField::make('nim')->label("NIM")->required(),
+                    ImportField::make('name')->label("Nama")->required(),
+                    ImportField::make('email')->label("Email")->required(),
+                    ImportField::make('kelas')->label("Kelas")->required(),
                 ])->handleRecordCreation(function (array $data) {
-                    if (User::where('nim', $data['nim'])->orWhere('email', $data['email'])->exists()) {
-                        return null;
+                    $existingUser = User::where('nim', $data['nim'])->orWhere('email', $data['email'])->first();
+
+                    if (!$existingUser) {
+                        $user = new User();
+                        $user->nim = $data['nim'];
+                        $user->name = $data['name'];
+                        $user->email = $data['email'];
+                        $user->kelas = $data['kelas'];
+                        $user->password = bcrypt($data['nim']);
+                        $user->save();
+
+                        return $user; 
                     }
-
-                    $user = new User();
-                    $user->nim = $data['nim'];
-                    $user->name = $data['name'];
-                    $user->email = $data['email'];
-                    $user->kelas = $data['kelas'];
-                    $user->password = bcrypt($data['nim']);
-                    $user->save();
-
-                    return $user;
                 }),
+
         ];
     }
 }
