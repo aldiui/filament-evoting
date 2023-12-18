@@ -29,7 +29,7 @@ class ListUsers extends ListRecords
                     ImportField::make('nim')->label("NIM")->required(),
                     ImportField::make('name')->label("Nama")->required(),
                     ImportField::make('email')->label("Email")->required(),
-                    ImportField::make('kelas')->label("Kelas")->required(),
+                    ImportField::make('kelas')->label("Kelasg")->required(),
                 ])->handleRecordCreation(function (array $data) {
                     $existingUser = User::where('nim', $data['nim'])->orWhere('email', $data['email'])->first();
 

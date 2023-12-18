@@ -27,6 +27,8 @@ class UserResource extends Resource
 
     protected static ?string $slug = 'mahasiswa';
 
+    protected static ?string $recordTitleAttribute = 'name';
+
     public static function form(Form $form): Form
     {
         return $form
@@ -49,7 +51,8 @@ class UserResource extends Resource
                     ])
                     ->searchable()
                     ->required(),
-                TextInput::make('password')->password()->label('Password'),
+                TextInput::make('password')->password()->label('Password')->dehydrateStateUsing(fn ($state) => bycyptr($state))
+                ->dehydrated(fn ($state) => filled($state)),
             ])->columns(1);
     }
 
