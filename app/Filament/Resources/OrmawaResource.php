@@ -13,6 +13,7 @@ use Filament\Forms\Components\MarkdownEditor;
 use App\Filament\Resources\OrmawaResource\Pages;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use App\Filament\Resources\AnggotaResource\RelationManagers\OrmawaRelationManager;
 
 class OrmawaResource extends Resource
 {
@@ -35,8 +36,8 @@ class OrmawaResource extends Resource
         return $form
             ->schema([
                 SpatieMediaLibraryFileUpload::make('image')->label('Foto'),
-                TextInput::make('name')->label('Nama')->required(),
-                MarkdownEditor::make('description')->label('Deskripsi')->required(),
+                TextInput::make('name')->label('Nama')->required()->maxLength(255),
+                MarkdownEditor::make('description')->label('Deskripsi')->required()->maxLength(255),
             ])->columns(1);
     }
 
@@ -65,7 +66,7 @@ class OrmawaResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            OrmawaRelationManager::class,
         ];
     }
 
@@ -73,6 +74,7 @@ class OrmawaResource extends Resource
     {
         return [
             'index' => Pages\ListOrmawas::route('/'),
+            'edit' => Pages\EditOrmawa::route('/{record}/edit'),
         ];
     }
 }

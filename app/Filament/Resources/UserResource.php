@@ -33,9 +33,9 @@ class UserResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('nim')->label('NIM')->required(),
-                TextInput::make('name')->label('Nama')->required(),
-                TextInput::make('email')->email()->label('Email')->required(),
+                TextInput::make('nim')->label('NIM')->required()->maxLength(255),
+                TextInput::make('name')->label('Nama')->required()->maxLength(255),
+                TextInput::make('email')->email()->label('Email')->required()->maxLength(255),
                 Select::make('kelas')
                     ->label('Kelas')
                     ->options([
@@ -52,7 +52,7 @@ class UserResource extends Resource
                     ->searchable()
                     ->required(),
                 TextInput::make('password')->password()->label('Password')->dehydrateStateUsing(fn ($state) => bycyptr($state))
-                ->dehydrated(fn ($state) => filled($state)),
+                ->dehydrated(fn ($state) => filled($state))->maxLength(255),
             ])->columns(1);
     }
 
