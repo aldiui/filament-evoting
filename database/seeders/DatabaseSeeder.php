@@ -216,8 +216,118 @@ class DatabaseSeeder extends Seeder
             ['id' => '191','name' => 'NAZHUA PUPUT SYAHARANI','email' => '12220715@bsi.ac.id','nim' => '12220715','kelas' => '12.3C.17','image' => NULL,'role' => '0','email_verified_at' => NULL,'password' => '$2y$12$gO61ZVboaN7LN.ekZuFQPOJ.wjXb0f/IqZEpmYHrefEmdMK92QpWO','remember_token' => NULL,'created_at' => '2023-12-18 17:53:39','updated_at' => '2023-12-18 17:53:39'],
             ['id' => '192','name' => 'FERI FERDIAN','email' => '12220897@bsi.ac.id','nim' => '12220897','kelas' => '12.3C.17','image' => NULL,'role' => '0','email_verified_at' => NULL,'password' => '$2y$12$MBON4lhn36ZIH60hpfIjp.bN9jXjeLmcqw/pTMq6CNhhNiv5bCT/S','remember_token' => NULL,'created_at' => '2023-12-18 17:53:39','updated_at' => '2023-12-18 17:53:39']
         ];
+        
+        $anggotas = [
+            ['id' => '1','ormawa_id' => '1','user_id' => '169','jabatan' => 'Ketua','created_at' => '2023-12-19 23:10:13','updated_at' => '2023-12-19 23:10:13'],
+            ['id' => '2','ormawa_id' => '1','user_id' => '57','jabatan' => 'Wakil Ketua','created_at' => '2023-12-19 23:30:09','updated_at' => '2023-12-19 23:30:09'],
+            ['id' => '3','ormawa_id' => '1','user_id' => '95','jabatan' => 'Sekretaris','created_at' => '2023-12-19 23:31:09','updated_at' => '2023-12-19 23:31:09'],
+            ['id' => '4','ormawa_id' => '1','user_id' => '152','jabatan' => 'Bendahara 1','created_at' => '2023-12-19 23:31:34','updated_at' => '2023-12-19 23:31:34'],
+            ['id' => '5','ormawa_id' => '1','user_id' => '108','jabatan' => 'Bendahara 2','created_at' => '2023-12-19 23:35:03','updated_at' => '2023-12-19 23:35:03'],
+            ['id' => '6','ormawa_id' => '1','user_id' => '123','jabatan' => 'Menteri Dalam Kampus','created_at' => '2023-12-19 23:35:40','updated_at' => '2023-12-19 23:35:40'],
+            ['id' => '7','ormawa_id' => '1','user_id' => '117','jabatan' => 'Staf Menteri Dalam Kampus','created_at' => '2023-12-19 23:36:04','updated_at' => '2023-12-19 23:36:04'],
+            ['id' => '8','ormawa_id' => '1','user_id' => '172','jabatan' => 'Menteri Luar Kampus','created_at' => '2023-12-19 23:36:31','updated_at' => '2023-12-19 23:36:31'],
+            ['id' => '9','ormawa_id' => '1','user_id' => '76','jabatan' => 'Staf Menteri Luar Kampus','created_at' => '2023-12-19 23:36:54','updated_at' => '2023-12-19 23:36:54'],
+            ['id' => '10','ormawa_id' => '1','user_id' => '118','jabatan' => 'Menteri Agama','created_at' => '2023-12-19 23:41:38','updated_at' => '2023-12-19 23:41:38'],
+            ['id' => '11','ormawa_id' => '1','user_id' => '100','jabatan' => 'Staf Menteri Agama','created_at' => '2023-12-19 23:42:15','updated_at' => '2023-12-19 23:42:15'],
+            ['id' => '12','ormawa_id' => '1','user_id' => '149','jabatan' => 'Menteri Pendidikan Sosial','created_at' => '2023-12-19 23:42:46','updated_at' => '2023-12-19 23:42:46'],
+            ['id' => '13','ormawa_id' => '1','user_id' => '112','jabatan' => 'Staf Menteri Pendidikan dan Sosial','created_at' => '2023-12-19 23:43:14','updated_at' => '2023-12-19 23:43:14'],
+            ['id' => '14','ormawa_id' => '1','user_id' => '133','jabatan' => 'Menteri Kebudayaan dan Olahraga','created_at' => '2023-12-19 23:43:47','updated_at' => '2023-12-19 23:43:47'],
+            ['id' => '15','ormawa_id' => '1','user_id' => '105','jabatan' => 'Staf Menteri Kebudayaan dan Olahraga','created_at' => '2023-12-19 23:44:05','updated_at' => '2023-12-19 23:44:05'],
+            ['id' => '16','ormawa_id' => '1','user_id' => '136','jabatan' => 'Menteri Komunikasi dan Informasi','created_at' => '2023-12-19 23:46:15','updated_at' => '2023-12-19 23:46:15'],
+            ['id' => '17','ormawa_id' => '1','user_id' => '115','jabatan' => 'Staf Menteri Komunikasi dan Informasi','created_at' => '2023-12-19 23:46:36','updated_at' => '2023-12-19 23:46:36'],
+            ['id' => '18','ormawa_id' => '2','user_id' => '119','jabatan' => 'Ketua','created_at' => '2023-12-19 23:47:11','updated_at' => '2023-12-19 23:47:11'],
+            ['id' => '19','ormawa_id' => '2','user_id' => '97','jabatan' => 'Wakil Ketua','created_at' => '2023-12-19 23:48:26','updated_at' => '2023-12-19 23:48:26'],
+            ['id' => '20','ormawa_id' => '2','user_id' => '125','jabatan' => 'Sekretaris 1','created_at' => '2023-12-19 23:48:40','updated_at' => '2023-12-19 23:48:40'],
+            ['id' => '21','ormawa_id' => '2','user_id' => '100','jabatan' => 'Sekretaris 2','created_at' => '2023-12-19 23:48:59','updated_at' => '2023-12-19 23:48:59'],
+            ['id' => '22','ormawa_id' => '2','user_id' => '85','jabatan' => 'Bendahara 1','created_at' => '2023-12-19 23:49:10','updated_at' => '2023-12-19 23:49:10'],
+            ['id' => '23','ormawa_id' => '2','user_id' => '65','jabatan' => 'Bendahara 2','created_at' => '2023-12-19 23:49:21','updated_at' => '2023-12-19 23:49:21'],
+            ['id' => '24','ormawa_id' => '2','user_id' => '136','jabatan' => 'Divisi Informasi dan Komunikasi','created_at' => '2023-12-19 23:49:39','updated_at' => '2023-12-19 23:50:01'],
+            ['id' => '25','ormawa_id' => '2','user_id' => '123','jabatan' => 'Divisi Informasi dan Komunikasi','created_at' => '2023-12-19 23:49:52','updated_at' => '2023-12-19 23:50:11'],
+            ['id' => '26','ormawa_id' => '2','user_id' => '66','jabatan' => 'Divisi Informasi dan Komunikasi','created_at' => '2023-12-19 23:50:24','updated_at' => '2023-12-19 23:50:24'],
+            ['id' => '27','ormawa_id' => '2','user_id' => '93','jabatan' => 'Divisi Informasi dan Komunikasi','created_at' => '2023-12-19 23:50:42','updated_at' => '2023-12-19 23:50:42'],
+            ['id' => '28','ormawa_id' => '2','user_id' => '140','jabatan' => 'Divisi Sarana dan Prasarana','created_at' => '2023-12-19 23:51:02','updated_at' => '2023-12-19 23:51:02'],
+            ['id' => '29','ormawa_id' => '2','user_id' => '122','jabatan' => 'Divisi Sarana dan Prasarana','created_at' => '2023-12-19 23:51:14','updated_at' => '2023-12-19 23:51:14'],
+            ['id' => '30','ormawa_id' => '2','user_id' => '60','jabatan' => 'Divisi Sarana dan Prasarana','created_at' => '2023-12-19 23:51:30','updated_at' => '2023-12-19 23:51:30'],
+            ['id' => '31','ormawa_id' => '2','user_id' => '84','jabatan' => 'Divisi Sarana dan Prasarana','created_at' => '2023-12-19 23:51:51','updated_at' => '2023-12-19 23:51:51'],
+            ['id' => '32','ormawa_id' => '2','user_id' => '137','jabatan' => 'Divisi Hubungan Masyarakat','created_at' => '2023-12-19 23:52:14','updated_at' => '2023-12-19 23:52:14'],
+            ['id' => '33','ormawa_id' => '2','user_id' => '144','jabatan' => 'Divisi Hubungan Masyarakat','created_at' => '2023-12-19 23:52:26','updated_at' => '2023-12-19 23:52:26'],
+            ['id' => '34','ormawa_id' => '2','user_id' => '105','jabatan' => 'Divisi Hubungan Masyarakat','created_at' => '2023-12-19 23:52:38','updated_at' => '2023-12-19 23:52:38'],
+            ['id' => '35','ormawa_id' => '2','user_id' => '94','jabatan' => 'Divisi Hubungan Masyarakat','created_at' => '2023-12-19 23:52:51','updated_at' => '2023-12-19 23:52:51'],
+            ['id' => '36','ormawa_id' => '2','user_id' => '130','jabatan' => 'Divisi Penelitian dan Pengembangan','created_at' => '2023-12-19 23:53:15','updated_at' => '2023-12-19 23:53:15'],
+            ['id' => '37','ormawa_id' => '2','user_id' => '120','jabatan' => 'Divisi Penelitian dan Pengembangan','created_at' => '2023-12-19 23:53:28','updated_at' => '2023-12-19 23:53:28'],
+            ['id' => '38','ormawa_id' => '2','user_id' => '104','jabatan' => 'Divisi Penelitian dan Pengembangan','created_at' => '2023-12-19 23:53:43','updated_at' => '2023-12-19 23:53:43'],
+            ['id' => '39','ormawa_id' => '2','user_id' => '90','jabatan' => 'Divisi Penelitian dan Pengembangan','created_at' => '2023-12-19 23:53:55','updated_at' => '2023-12-19 23:53:55'],
+            ['id' => '40','ormawa_id' => '2','user_id' => '59','jabatan' => 'Divisi Penelitian dan Pengembangan','created_at' => '2023-12-19 23:54:07','updated_at' => '2023-12-19 23:54:07'],
+            ['id' => '41','ormawa_id' => '3','user_id' => '135','jabatan' => 'Ketua','created_at' => '2023-12-19 23:54:44','updated_at' => '2023-12-19 23:54:44'],
+            ['id' => '42','ormawa_id' => '3','user_id' => '106','jabatan' => 'Wakil Ketua','created_at' => '2023-12-19 23:54:59','updated_at' => '2023-12-19 23:54:59'],
+            ['id' => '43','ormawa_id' => '3','user_id' => '74','jabatan' => 'Sekretaris','created_at' => '2023-12-19 23:55:12','updated_at' => '2023-12-19 23:55:12'],
+            ['id' => '44','ormawa_id' => '3','user_id' => '147','jabatan' => 'Bendahara','created_at' => '2023-12-19 23:55:26','updated_at' => '2023-12-19 23:55:26'],
+            ['id' => '45','ormawa_id' => '3','user_id' => '125','jabatan' => 'Koordinator Bidang Media','created_at' => '2023-12-19 23:56:07','updated_at' => '2023-12-19 23:56:07'],
+            ['id' => '46','ormawa_id' => '3','user_id' => '118','jabatan' => 'Koordinator Bidang Hubungan Masyarakat','created_at' => '2023-12-19 23:56:54','updated_at' => '2023-12-19 23:56:54'],
+            ['id' => '47','ormawa_id' => '3','user_id' => '109','jabatan' => 'Koordinator Bidang Dakwah','created_at' => '2023-12-19 23:57:22','updated_at' => '2023-12-19 23:57:22'],
+            ['id' => '48','ormawa_id' => '3','user_id' => '176','jabatan' => 'Koordinator Bidang Kaderisasi','created_at' => '2023-12-19 23:57:45','updated_at' => '2023-12-19 23:57:45'],
+            ['id' => '49','ormawa_id' => '3','user_id' => '127','jabatan' => 'Koordinator Seni dan Keterampilan','created_at' => '2023-12-19 23:58:08','updated_at' => '2023-12-19 23:58:08'],
+            ['id' => '50','ormawa_id' => '3','user_id' => '100','jabatan' => 'Koordinator Bidang Kemuslimahan','created_at' => '2023-12-19 23:58:27','updated_at' => '2023-12-19 23:58:27'],
+            ['id' => '51','ormawa_id' => '4','user_id' => '172','jabatan' => 'Ketua','created_at' => '2023-12-20 00:00:33','updated_at' => '2023-12-20 00:00:33'],
+            ['id' => '52','ormawa_id' => '4','user_id' => '118','jabatan' => 'Wakil Ketua','created_at' => '2023-12-20 00:00:47','updated_at' => '2023-12-20 00:00:47'],
+            ['id' => '53','ormawa_id' => '4','user_id' => '67','jabatan' => 'Sekretaris','created_at' => '2023-12-20 00:01:01','updated_at' => '2023-12-20 00:01:01'],
+            ['id' => '54','ormawa_id' => '4','user_id' => '96','jabatan' => 'Bendahara','created_at' => '2023-12-20 00:01:21','updated_at' => '2023-12-20 00:01:21'],
+            ['id' => '55','ormawa_id' => '4','user_id' => '145','jabatan' => 'Koordinator Bidang Seni Suara dan PSM','created_at' => '2023-12-20 00:01:44','updated_at' => '2023-12-20 00:01:44'],
+            ['id' => '56','ormawa_id' => '4','user_id' => '107','jabatan' => 'Staf Bidang Seni Suara dan PSM','created_at' => '2023-12-20 00:02:01','updated_at' => '2023-12-20 00:02:01'],
+            ['id' => '57','ormawa_id' => '4','user_id' => '117','jabatan' => 'Kooridantor Bidang Seni Budaya','created_at' => '2023-12-20 00:02:18','updated_at' => '2023-12-20 00:02:18'],
+            ['id' => '58','ormawa_id' => '4','user_id' => '72','jabatan' => 'Staf Bidang Seni Budaya','created_at' => '2023-12-20 00:02:37','updated_at' => '2023-12-20 00:02:37'],
+            ['id' => '59','ormawa_id' => '4','user_id' => '159','jabatan' => 'Koordinator Bidang Alat Musik','created_at' => '2023-12-20 00:02:56','updated_at' => '2023-12-20 00:02:56'],
+            ['id' => '60','ormawa_id' => '4','user_id' => '76','jabatan' => 'Staf Bidang Alat Musik','created_at' => '2023-12-20 00:03:16','updated_at' => '2023-12-20 00:03:16'],
+            ['id' => '61','ormawa_id' => '4','user_id' => '74','jabatan' => 'Koordinator Bidang Hubungan Masyarakat','created_at' => '2023-12-20 00:03:32','updated_at' => '2023-12-20 00:03:32'],
+            ['id' => '62','ormawa_id' => '4','user_id' => '86','jabatan' => 'Staf Bidang Hubungan Masyarakat','created_at' => '2023-12-20 00:03:49','updated_at' => '2023-12-20 00:03:49'],
+            ['id' => '63','ormawa_id' => '4','user_id' => '57','jabatan' => 'Koordinator Bidang Informasi dan Komunikasi','created_at' => '2023-12-20 00:04:11','updated_at' => '2023-12-20 00:04:11'],
+            ['id' => '64','ormawa_id' => '5','user_id' => '153','jabatan' => 'Ketua','created_at' => '2023-12-20 00:04:39','updated_at' => '2023-12-20 00:04:39'],
+            ['id' => '65','ormawa_id' => '5','user_id' => '75','jabatan' => 'Wakil Ketua','created_at' => '2023-12-20 00:04:50','updated_at' => '2023-12-20 00:04:50'],
+            ['id' => '66','ormawa_id' => '5','user_id' => '142','jabatan' => 'Sekretaris','created_at' => '2023-12-20 00:05:05','updated_at' => '2023-12-20 00:05:05'],
+            ['id' => '67','ormawa_id' => '5','user_id' => '143','jabatan' => 'Bendahara','created_at' => '2023-12-20 00:05:20','updated_at' => '2023-12-20 00:05:20'],
+            ['id' => '68','ormawa_id' => '5','user_id' => '88','jabatan' => 'Koordinator Pendidikan dan Pelatihan','created_at' => '2023-12-20 00:05:37','updated_at' => '2023-12-20 00:05:37'],
+            ['id' => '69','ormawa_id' => '5','user_id' => '78','jabatan' => 'Koordinator Informasi dan Komunikasi','created_at' => '2023-12-20 00:05:54','updated_at' => '2023-12-20 00:05:54'],
+            ['id' => '70','ormawa_id' => '5','user_id' => '61','jabatan' => 'Koordinator Hubungan Masyarakat','created_at' => '2023-12-20 00:06:10','updated_at' => '2023-12-20 00:06:10'],
+            ['id' => '71','ormawa_id' => '6','user_id' => '149','jabatan' => 'Ketua','created_at' => '2023-12-20 00:06:41','updated_at' => '2023-12-20 00:06:41'],
+            ['id' => '72','ormawa_id' => '6','user_id' => '109','jabatan' => 'Wakil Ketua','created_at' => '2023-12-20 00:06:56','updated_at' => '2023-12-20 00:07:11'],
+            ['id' => '73','ormawa_id' => '6','user_id' => '110','jabatan' => 'Sekretaris 1','created_at' => '2023-12-20 00:07:25','updated_at' => '2023-12-20 00:07:25'],
+            ['id' => '74','ormawa_id' => '6','user_id' => '86','jabatan' => 'Sekretaris 2','created_at' => '2023-12-20 00:07:40','updated_at' => '2023-12-20 00:07:40'],
+            ['id' => '75','ormawa_id' => '6','user_id' => '128','jabatan' => 'Bendahara 1','created_at' => '2023-12-20 00:07:53','updated_at' => '2023-12-20 00:07:53'],
+            ['id' => '76','ormawa_id' => '6','user_id' => '65','jabatan' => 'Bendahara 2','created_at' => '2023-12-20 00:08:04','updated_at' => '2023-12-20 00:08:04'],
+            ['id' => '77','ormawa_id' => '6','user_id' => '127','jabatan' => 'Koordinator Bidang Pendidikan','created_at' => '2023-12-20 00:08:27','updated_at' => '2023-12-20 00:08:27'],
+            ['id' => '78','ormawa_id' => '6','user_id' => '57','jabatan' => 'Staf Bidang Pendidikan','created_at' => '2023-12-20 00:08:45','updated_at' => '2023-12-20 00:08:45'],
+            ['id' => '79','ormawa_id' => '6','user_id' => '137','jabatan' => 'Koordinator Bidang Hubungan Masyarakat','created_at' => '2023-12-20 00:09:02','updated_at' => '2023-12-20 00:09:02'],
+            ['id' => '80','ormawa_id' => '6','user_id' => '60','jabatan' => 'Staf Bidang Hubungan Masyarakat','created_at' => '2023-12-20 00:09:23','updated_at' => '2023-12-20 00:09:23'],
+            ['id' => '81','ormawa_id' => '6','user_id' => '129','jabatan' => 'Koordinator Bidang Media','created_at' => '2023-12-20 00:09:41','updated_at' => '2023-12-20 00:09:41'],
+            ['id' => '82','ormawa_id' => '6','user_id' => '102','jabatan' => 'Staf Bidang Media','created_at' => '2023-12-20 00:09:59','updated_at' => '2023-12-20 00:09:59'],
+            ['id' => '83','ormawa_id' => '6','user_id' => '70','jabatan' => 'Koordinator Bidang Bahasa','created_at' => '2023-12-20 00:10:20','updated_at' => '2023-12-20 00:10:20'],
+            ['id' => '84','ormawa_id' => '6','user_id' => '103','jabatan' => 'Staf Bidang Bahasa','created_at' => '2023-12-20 00:10:36','updated_at' => '2023-12-20 00:10:36'],
+            ['id' => '85','ormawa_id' => '6','user_id' => '173','jabatan' => 'Koordinator Bidang Kebudayaan','created_at' => '2023-12-20 00:10:56','updated_at' => '2023-12-20 00:10:56'],
+            ['id' => '86','ormawa_id' => '6','user_id' => '93','jabatan' => 'Staf Bidang Kebudayaan','created_at' => '2023-12-20 00:11:15','updated_at' => '2023-12-20 00:11:15'],
+            ['id' => '87','ormawa_id' => '1','user_id' => '27','jabatan' => 'Anggota','created_at' => '2023-12-20 02:10:47','updated_at' => '2023-12-20 02:10:47'],
+            ['id' => '88','ormawa_id' => '1','user_id' => '7','jabatan' => 'Anggota','created_at' => '2023-12-20 02:12:12','updated_at' => '2023-12-20 02:12:12']
+        ];
+
+        $agendas = [
+            ['id' => '1','ormawa_id' => '1','tanggal' => '2023-12-20','jam_mulai' => '07:00:00','jam_selesai' => '18:00:00','status' => '1','created_at' => '2023-12-20 01:30:24','updated_at' => '2023-12-20 01:30:24'],
+            ['id' => '2','ormawa_id' => '2','tanggal' => '2023-12-20','jam_mulai' => '07:00:00','jam_selesai' => '18:00:00','status' => '0','created_at' => '2023-12-20 01:35:57','updated_at' => '2023-12-20 01:35:57'],
+            ['id' => '3','ormawa_id' => '3','tanggal' => '2023-12-20','jam_mulai' => '07:00:00','jam_selesai' => '18:00:00','status' => '0','created_at' => '2023-12-20 01:36:18','updated_at' => '2023-12-20 01:36:18'],
+            ['id' => '4','ormawa_id' => '4','tanggal' => '2023-12-20','jam_mulai' => '07:00:00','jam_selesai' => '18:00:00','status' => '0','created_at' => '2023-12-20 01:36:47','updated_at' => '2023-12-20 01:36:47'],
+            ['id' => '5','ormawa_id' => '5','tanggal' => '2023-12-20','jam_mulai' => '07:00:00','jam_selesai' => '18:00:00','status' => '0','created_at' => '2023-12-20 01:37:54','updated_at' => '2023-12-20 01:37:54'],
+            ['id' => '6','ormawa_id' => '6','tanggal' => '2023-12-20','jam_mulai' => '07:00:00','jam_selesai' => '18:00:00','status' => '0','created_at' => '2023-12-20 01:38:15','updated_at' => '2023-12-20 01:38:15']
+        ];
+        
+        $calons = [
+            ['id' => '1','no_paslon' => '1','ketua_id' => '115','wakil_id' => '7','agenda_id' => '1','visi' => '-','misi' => '-','image' => NULL,'created_at' => '2023-12-20 02:15:03','updated_at' => '2023-12-20 02:15:03'],
+            ['id' => '2','no_paslon' => '2','ketua_id' => '57','wakil_id' => '27','agenda_id' => '1','visi' => '-','misi' => '-','image' => NULL,'created_at' => '2023-12-20 02:15:22','updated_at' => '2023-12-20 02:15:22'],
+            ['id' => '3','no_paslon' => '1','ketua_id' => '104','wakil_id' => '104','agenda_id' => '2','visi' => '-','misi' => '-','image' => NULL,'created_at' => '2023-12-20 02:18:56','updated_at' => '2023-12-20 02:18:56'],
+            ['id' => '4','no_paslon' => '2','ketua_id' => '59','wakil_id' => '59','agenda_id' => '2','visi' => '-','misi' => '-','image' => NULL,'created_at' => '2023-12-20 02:19:15','updated_at' => '2023-12-20 02:19:15']
+        ];
 
         DB::table('ormawas')->insert($ormawas);
         DB::table('users')->insert($users);
+        DB::table('anggotas')->insert($anggotas);
+        DB::table('agendas')->insert($agendas);
+        DB::table('calons')->insert($calons);
     }
 }

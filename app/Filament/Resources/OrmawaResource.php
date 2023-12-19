@@ -13,12 +13,13 @@ use Filament\Forms\Components\MarkdownEditor;
 use App\Filament\Resources\OrmawaResource\Pages;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use App\Filament\Resources\OrmawaResource\RelationManagers\AnggotaRelationManager;
 
 class OrmawaResource extends Resource
 {
     protected static ?string $model = Ormawa::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-users';
+    protected static ?string $navigationIcon = 'heroicon-o-building-office';
 
     protected static ?string $navigationLabel = 'Ormawa';
 
@@ -36,7 +37,7 @@ class OrmawaResource extends Resource
             ->schema([
                 SpatieMediaLibraryFileUpload::make('image')->label('Foto'),
                 TextInput::make('name')->label('Nama')->required()->maxLength(255),
-                MarkdownEditor::make('description')->label('Deskripsi')->required()->maxLength(255),
+                MarkdownEditor::make('description')->label('Deskripsi')->required(),
             ])->columns(1);
     }
 
@@ -46,6 +47,7 @@ class OrmawaResource extends Resource
             ->columns([
                 SpatieMediaLibraryImageColumn::make('image')->label('Foto')->size(80),
                 TextColumn::make("name")->label('Nama')->sortable()->searchable(),
+                TextColumn::make("anggota_count")->counts('anggota')->label('Anggota')->sortable()->searchable(),
                 TextColumn::make("description")->label('Deskripsi')->sortable()->searchable()
             ])
             ->filters([
@@ -65,7 +67,7 @@ class OrmawaResource extends Resource
     public static function getRelations(): array
     {
         return [
-            
+            AnggotaRelationManager::class,
         ];
     }
 

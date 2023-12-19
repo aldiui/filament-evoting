@@ -11,9 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('suaras', function (Blueprint $table) {
+        Schema::create('agendas', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('ormawa_id');
+            $table->date('tanggal');
+            $table->time('jam_mulai');
+            $table->time('jam_selesai');
+            $table->boolean('status')->default(0);
             $table->timestamps();
+
+            $table->foreign('ormawa_id')->references('id')->on('ormawas');
         });
     }
 
@@ -22,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('suaras');
+        Schema::dropIfExists('agendas');
     }
 };

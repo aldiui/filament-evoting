@@ -6,6 +6,7 @@ namespace App\Models;
 use App\Models\Anggota;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -18,11 +19,8 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $guarded = [];
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -44,8 +42,9 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function anggotas(): HashMany
+    public function anggota(): HasMany
     {
         return $this->hasMany(Anggota::class);
     }
+
 }
