@@ -13,7 +13,6 @@ use Filament\Forms\Components\MarkdownEditor;
 use App\Filament\Resources\OrmawaResource\Pages;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
-use App\Filament\Resources\AnggotaResource\RelationManagers\OrmawaRelationManager;
 
 class OrmawaResource extends Resource
 {
@@ -66,7 +65,7 @@ class OrmawaResource extends Resource
     public static function getRelations(): array
     {
         return [
-            OrmawaRelationManager::class,
+            
         ];
     }
 
