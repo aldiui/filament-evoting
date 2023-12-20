@@ -76,6 +76,7 @@ class UserResource extends Resource
                     "12.5A.17" => "12.5A.17",
                     "12.5B.17" => "12.5B.17",
                     "12.5D.17" => "12.5D.17",
+                    "Dosen" => "Dosen",
                 ]),
             ])
             ->actions([
