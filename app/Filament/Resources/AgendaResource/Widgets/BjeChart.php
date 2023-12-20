@@ -47,6 +47,6 @@ class BjeChart extends ChartWidget
 
     public function getDescription(): ?string
     {
-        return Anggota::where('ormawa_id', 5)->count() . ' Mahasiswa Hak Suara';
+        return Anggota::where('ormawa_id', 6)->count() . ' Mahasiswa Hak Suara';
     }
 }
