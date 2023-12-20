@@ -19,7 +19,6 @@ return new class extends Migration
             $table->unsignedBigInteger('agenda_id');
             $table->string('visi');
             $table->text('misi');
-            $table->string('image')->nullable();
             $table->timestamps();
 
             $table->foreign('ketua_id')->references('id')->on('users');

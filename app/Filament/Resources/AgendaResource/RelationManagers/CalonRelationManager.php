@@ -12,6 +12,8 @@ use Filament\Forms\Components\Select;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Builder;
+use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\MarkdownEditor;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Resources\RelationManagers\RelationManager;
@@ -24,6 +26,7 @@ class CalonRelationManager extends RelationManager
     {
         return $form
             ->schema([
+                SpatieMediaLibraryFileUpload::make('image')->label('Foto'),
                 Select::make('ketua_id')
                     ->label('Ketua')
                     ->options(Anggota::with("user", "ormawa")->get()->pluck('user.name', 'user.id'))
@@ -45,9 +48,12 @@ class CalonRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('no_paslon')
             ->columns([
+                SpatieMediaLibraryImageColumn::make('image')->label('Foto')->size(80),
                 TextColumn::make('no_paslon')->label('Nomor Paslon')->sortable()->searchable(),
                 TextColumn::make('ketua.name')->label('Ketua')->sortable()->searchable(),
                 TextColumn::make('wakil.name')->label('Wakil Ketua')->sortable()->searchable(),
+                TextColumn::make('suara_count')->counts('suara')->label('Suara')->sortable()->searchable(),
+
             ])
             ->filters([
                 //
