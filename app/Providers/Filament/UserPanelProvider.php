@@ -32,7 +32,7 @@ class UserPanelProvider extends PanelProvider
     {
         return $panel
             ->id('user')
-            ->path('user')
+            ->path('/')
             ->profile()
             ->login()
             ->topnavigation()
