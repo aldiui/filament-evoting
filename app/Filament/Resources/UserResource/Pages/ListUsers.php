@@ -4,12 +4,11 @@ namespace App\Filament\Resources\UserResource\Pages;
 
 use App\Models\User;
 use Filament\Actions;
+use Konnco\FilamentImport\ImportField;
 use App\Filament\Resources\UserResource;
 use Filament\Resources\Pages\ListRecords;
-use Konnco\FilamentImport\Actions\ImportField;
-use Konnco\FilamentImport\Actions\ImportAction;
 use Illuminate\Database\Eloquent\Builder;
-
+use Konnco\FilamentImport\Actions\ImportAction;
 
 class ListUsers extends ListRecords
 {

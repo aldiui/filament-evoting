@@ -339,13 +339,17 @@ class DatabaseSeeder extends Seeder
             ['id' => '6','ormawa_id' => '6','tanggal' => '2023-12-20','jam_mulai' => '07:00:00','jam_selesai' => '18:00:00','status' => '0','created_at' => '2023-12-20 01:38:15','updated_at' => '2023-12-20 01:38:15']
         ];
         
-        $calons = [
-            ['id' => '1','no_paslon' => '1','ketua_id' => '115','wakil_id' => '7','agenda_id' => '1','visi' => '-','misi' => '-','created_at' => '2023-12-20 02:15:03','updated_at' => '2023-12-20 02:15:03'],
-            ['id' => '2','no_paslon' => '2','ketua_id' => '57','wakil_id' => '27','agenda_id' => '1','visi' => '-','misi' => '-','created_at' => '2023-12-20 02:15:22','updated_at' => '2023-12-20 02:15:22'],
-            ['id' => '3','no_paslon' => '1','ketua_id' => '104','wakil_id' => '104','agenda_id' => '2','visi' => '-','misi' => '-','created_at' => '2023-12-20 02:18:56','updated_at' => '2023-12-20 02:18:56'],
-            ['id' => '4','no_paslon' => '2','ketua_id' => '59','wakil_id' => '59','agenda_id' => '2','visi' => '-','misi' => '-','created_at' => '2023-12-20 02:19:15','updated_at' => '2023-12-20 02:19:15']
-        ];
-
+$calons = array(
+  array('id' => '1','no_paslon' => '1','ketua_id' => '115','wakil_id' => '7','agenda_id' => '1','visi' => 'BEM Universitas BSI Sebagai wadah aspirasi, kolaborasi dan kontribusi para mahasiswa Universitas BSI yang berdampak positif dengan menjalankan tri dharma perguruan tinggi.','misi' => '1. Membangun suasana kekeluargaan yang mendorong pada perubahaan intelektual mahasiswa dengan menguatkan kerjasama yang mendorong produktivitas minat bakat mahasiswa.
+2. Membangun kerjasama dengan pihak eksternal guna meningkatkan intelektual mahasiswa.
+3. Meningkatkan komunikasi dan penyampaian informasi yang efisien untuk seluruh mahasiswa.
+4. Terjun langsung kepada masyarakat sebagai sarana mendekatkan diri guna mengimplementasikan pengabdian masyarakat.','created_at' => '2023-12-20 02:15:03','updated_at' => '2023-12-23 10:36:47'),
+  array('id' => '2','no_paslon' => '2','ketua_id' => '57','wakil_id' => '27','agenda_id' => '1','visi' => 'Mewujudkan Badan Eksekutif Mahasiswa yang aktif dan kreatif dalam pengembangan akademik maupun non akademik.','misi' => '1. Meningkatkan daya berfikir kritis mahasiswa dengan diadakannya diskusi rutin.
+2. Merealisasikan gaya hidup sehat.
+3. Membentuk wadah khusus untuk menampung aspirasi seluruh mahasiswa.','created_at' => '2023-12-20 02:15:22','updated_at' => '2023-12-23 10:37:35'),
+  array('id' => '3','no_paslon' => '1','ketua_id' => '104','wakil_id' => '104','agenda_id' => '2','visi' => '-','misi' => '-','created_at' => '2023-12-20 02:18:56','updated_at' => '2023-12-20 02:18:56'),
+  array('id' => '4','no_paslon' => '2','ketua_id' => '59','wakil_id' => '59','agenda_id' => '2','visi' => '-','misi' => '-','created_at' => '2023-12-20 02:19:15','updated_at' => '2023-12-20 02:19:15')
+);
         DB::table('ormawas')->insert($ormawas);
         DB::table('users')->insert($users);
         DB::table('anggotas')->insert($anggotas);

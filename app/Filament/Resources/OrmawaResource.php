@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use Filament\Forms;
 use Filament\Tables;
 use App\Models\Ormawa;
 use Filament\Forms\Form;
@@ -9,9 +10,12 @@ use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
+use Illuminate\Database\Eloquent\Builder;
 use Filament\Forms\Components\MarkdownEditor;
 use App\Filament\Resources\OrmawaResource\Pages;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
+use App\Filament\Resources\OrmawaResource\RelationManagers;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use App\Filament\Resources\OrmawaResource\RelationManagers\AnggotaRelationManager;
 
@@ -31,6 +35,7 @@ class OrmawaResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'name';
 
+
     public static function form(Form $form): Form
     {
         return $form
@@ -45,7 +50,7 @@ class OrmawaResource extends Resource
     {
         return $table
             ->columns([
-                SpatieMediaLibraryImageColumn::make('image')->label('Foto')->size(80),
+                SpatieMediaLibraryImageColumn::make('image')->label('Foto'),
                 TextColumn::make("name")->label('Nama')->sortable()->searchable(),
                 TextColumn::make("anggota_count")->counts('anggota')->label('Anggota')->sortable()->searchable(),
                 TextColumn::make("description")->label('Deskripsi')->sortable()->searchable()
@@ -61,7 +66,8 @@ class OrmawaResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->paginated([50, 100, 'all']);
     }
 
     public static function getRelations(): array

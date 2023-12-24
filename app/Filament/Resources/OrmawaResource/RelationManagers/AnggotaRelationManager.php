@@ -7,10 +7,10 @@ use App\Models\User;
 use Filament\Tables;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
-use Filament\Tables\Actions;
 use Filament\Forms\Components\Select;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
+use Illuminate\Database\Eloquent\Builder;
 use Filament\Resources\RelationManagers\RelationManager;
 
 class AnggotaRelationManager extends RelationManager
@@ -29,13 +29,14 @@ class AnggotaRelationManager extends RelationManager
                 TextInput::make('jabatan')
                     ->required()
                     ->maxLength(255),
-            ])->columns(1);
+            ])
+            ->columns(1);
     }
 
     public function table(Table $table): Table
     {
         return $table
-            ->recordTitleAttribute('user.name')
+            ->recordTitleAttribute('name')
             ->columns([
                 TextColumn::make('user.nim')->label('NIM')->sortable()->searchable(),
                 TextColumn::make('user.name')->label('Nama')->sortable()->searchable(),

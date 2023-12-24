@@ -6,8 +6,9 @@ use Filament\Pages;
 use Filament\Panel;
 use Filament\Widgets;
 use Filament\PanelProvider;
+use App\Http\Middleware\RoleUser;
 use Filament\Support\Colors\Color;
-use App\Filament\Widgets\StatWidgets;
+use App\Filament\Widgets\StatsOverview;
 use Filament\Http\Middleware\Authenticate;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -33,6 +34,7 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
+            ->profile()
             ->login()
             ->colors([
                 'primary' => Color::Blue,
@@ -44,7 +46,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
-                StatWidgets::class,
+                StatsOverview::class,
                 BemChart::class,
                 HimasiChart::class,
                 BadasalamChart::class,
@@ -64,6 +66,7 @@ class AdminPanelProvider extends PanelProvider
                 DispatchServingFilamentEvent::class,
             ])
             ->authMiddleware([
+                RoleUser::class,
                 Authenticate::class,
             ]);
     }

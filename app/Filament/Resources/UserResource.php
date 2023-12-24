@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use Filament\Forms;
 use App\Models\User;
 use Filament\Tables;
 use Filament\Forms\Form;
@@ -11,7 +12,10 @@ use Filament\Forms\Components\Select;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Tables\Filters\SelectFilter;
+use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\UserResource\Pages;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\UserResource\RelationManagers;
 
 class UserResource extends Resource
 {
@@ -48,6 +52,7 @@ class UserResource extends Resource
                         "12.5A.17" => "12.5A.17",
                         "12.5B.17" => "12.5B.17",
                         "12.5D.17" => "12.5D.17",
+                        "Dosen" => "Dosen",
                     ])
                     ->searchable()
                     ->required(),

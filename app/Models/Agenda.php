@@ -24,5 +24,4 @@ class Agenda extends Model
     {
         return $this->hasMany(Calon::class);
     }
-
 }
