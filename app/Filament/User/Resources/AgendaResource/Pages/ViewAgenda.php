@@ -4,9 +4,9 @@ namespace App\Filament\User\Resources\AgendaResource\Pages;
 
 use App\Filament\User\Resources\AgendaResource;
 use Filament\Actions;
-use Filament\Resources\Pages\EditRecord;
+use Filament\Resources\Pages\ViewRecord;
 
-class EditAgenda extends EditRecord
+class ViewAgenda extends ViewRecord
 {
     protected static string $resource = AgendaResource::class;
 }
