@@ -331,12 +331,12 @@ class DatabaseSeeder extends Seeder
         ];
 
         $agendas = [
-            ['id' => '1','ormawa_id' => '1','tanggal' => '2023-12-20','jam_mulai' => '07:00:00','jam_selesai' => '18:00:00','status' => '1','created_at' => '2023-12-20 01:30:24','updated_at' => '2023-12-20 01:30:24'],
-            ['id' => '2','ormawa_id' => '2','tanggal' => '2023-12-20','jam_mulai' => '07:00:00','jam_selesai' => '18:00:00','status' => '0','created_at' => '2023-12-20 01:35:57','updated_at' => '2023-12-20 01:35:57'],
-            ['id' => '3','ormawa_id' => '3','tanggal' => '2023-12-20','jam_mulai' => '07:00:00','jam_selesai' => '18:00:00','status' => '0','created_at' => '2023-12-20 01:36:18','updated_at' => '2023-12-20 01:36:18'],
-            ['id' => '4','ormawa_id' => '4','tanggal' => '2023-12-20','jam_mulai' => '07:00:00','jam_selesai' => '18:00:00','status' => '0','created_at' => '2023-12-20 01:36:47','updated_at' => '2023-12-20 01:36:47'],
-            ['id' => '5','ormawa_id' => '5','tanggal' => '2023-12-20','jam_mulai' => '07:00:00','jam_selesai' => '18:00:00','status' => '0','created_at' => '2023-12-20 01:37:54','updated_at' => '2023-12-20 01:37:54'],
-            ['id' => '6','ormawa_id' => '6','tanggal' => '2023-12-20','jam_mulai' => '07:00:00','jam_selesai' => '18:00:00','status' => '0','created_at' => '2023-12-20 01:38:15','updated_at' => '2023-12-20 01:38:15']
+            ['id' => '1','ormawa_id' => '1','tanggal' => '2023-01-25','jam_mulai' => '07:00:00','jam_selesai' => '18:00:00','status' => '1','created_at' => '2023-12-20 01:30:24','updated_at' => '2023-12-20 01:30:24'],
+            ['id' => '2','ormawa_id' => '2','tanggal' => '2023-01-02','jam_mulai' => '07:00:00','jam_selesai' => '18:00:00','status' => '0','created_at' => '2023-12-20 01:35:57','updated_at' => '2023-12-20 01:35:57'],
+            ['id' => '3','ormawa_id' => '3','tanggal' => '2023-01-02','jam_mulai' => '07:00:00','jam_selesai' => '18:00:00','status' => '0','created_at' => '2023-12-20 01:36:18','updated_at' => '2023-12-20 01:36:18'],
+            ['id' => '4','ormawa_id' => '4','tanggal' => '2023-01-02','jam_mulai' => '07:00:00','jam_selesai' => '18:00:00','status' => '0','created_at' => '2023-12-20 01:36:47','updated_at' => '2023-12-20 01:36:47'],
+            ['id' => '5','ormawa_id' => '5','tanggal' => '2023-01-02','jam_mulai' => '07:00:00','jam_selesai' => '18:00:00','status' => '0','created_at' => '2023-12-20 01:37:54','updated_at' => '2023-12-20 01:37:54'],
+            ['id' => '6','ormawa_id' => '6','tanggal' => '2023-01-02','jam_mulai' => '07:00:00','jam_selesai' => '18:00:00','status' => '0','created_at' => '2023-12-20 01:38:15','updated_at' => '2023-12-20 01:38:15']
         ];
         
 $calons = array(
