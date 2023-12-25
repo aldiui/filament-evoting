@@ -58,7 +58,7 @@ class CalonRelationManager extends RelationManager
                 //
             ])
             ->headerActions([
-                Tables\Actions\CreateAction::make(),
+                Tables\Actions\CreateAction::make()->disableCreateAnother(),
             ])
             ->actions([
                 Tables\Actions\EditAction::make()->label(''),

@@ -22,13 +22,13 @@ class ListUsers extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            Actions\CreateAction::make()->disableCreateAnother(),
             ImportAction::make()->label('Import')
                 ->fields([
                     ImportField::make('nim')->label("NIM")->required(),
                     ImportField::make('name')->label("Nama")->required(),
                     ImportField::make('email')->label("Email")->required(),
-                    ImportField::make('kelas')->label("Kelasg")->required(),
+                    ImportField::make('kelas')->label("Kelas")->required(),
                 ])->handleRecordCreation(function (array $data) {
                     $existingUser = User::where('nim', $data['nim'])->orWhere('email', $data['email'])->first();
 
