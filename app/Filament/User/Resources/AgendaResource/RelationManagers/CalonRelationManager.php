@@ -13,6 +13,7 @@ use Filament\Tables\Actions\Button;
 use Illuminate\Support\Facades\Auth;
 use Filament\Support\Enums\FontWeight;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Notifications\Notification;
 use Filament\Tables\Columns\Layout\Grid;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
@@ -58,6 +59,11 @@ class CalonRelationManager extends RelationManager
                                         $user->user_id = $userId;
                                         $user->calon_id = $calonId;
                                         $user->save();
+
+                                        Notification::make()
+                                        ->title('Anda berhasil memilih')
+                                        ->success()
+                                        ->send();
                                 } else {
                                     foreach ($cekSuara as $suara) {
                                         $cekPilihan = Calon::find($suara->calon_id);
@@ -69,10 +75,20 @@ class CalonRelationManager extends RelationManager
                                                 $user->user_id = $userId;
                                                 $user->calon_id = $calonId;
                                                 $user->save();
+
+                                                Notification::make()
+                                                ->title('Anda berhasil memilih')
+                                                ->success()
+                                                ->send();
                                             }
                                         }
                                     }
                                 }
+
+                                Notification::make()
+                                    ->title('Maaf anda sudah memilih')
+                                    ->danger()
+                                    ->send();
                             } else {
                                 $cekOrmawa = Ormawa::find($cekAgenda->ormawa_id);
                                 $cekAnggota = Anggota::where(['ormawa_id' => $cekAgenda->ormawa_id, 'user_id' => $userId])->first();
@@ -85,6 +101,11 @@ class CalonRelationManager extends RelationManager
                                         $user->user_id = $userId;
                                         $user->calon_id = $calonId;
                                         $user->save();
+
+                                        Notification::make()
+                                            ->title('Anda berhasil memilih')
+                                            ->success()
+                                            ->send();
                                     } else {
                                         foreach ($cekSuara as $suara) {
                                             $cekPilihan = Calon::find($suara->calon_id);
@@ -96,10 +117,21 @@ class CalonRelationManager extends RelationManager
                                                     $user->user_id = $userId;
                                                     $user->calon_id = $calonId;
                                                     $user->save();
+
+                                                    Notification::make()
+                                                        ->title('Anda berhasil memilih')
+                                                        ->success()
+                                                        ->send();
                                                 }
                                             }
                                         }
                                     }
+
+                                    
+                                    Notification::make()
+                                        ->title('Maaf anda sudah memilih')
+                                        ->danger()
+                                        ->send();
                                 }
                             }
                         }
