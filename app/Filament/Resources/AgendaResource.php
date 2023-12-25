@@ -47,7 +47,7 @@ class AgendaResource extends Resource
                 TimePicker::make('jam_mulai')->label('Jam Mulai')->required(),
                 TimePicker::make('jam_selesai')->label('Jam Selesai')->required(),
                 Toggle::make('status')->label("Umum"),
-            ])->columns(1);
+            ]);
     }
 
     public static function table(Table $table): Table

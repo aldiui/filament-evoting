@@ -43,7 +43,7 @@ class OrmawaResource extends Resource
                 SpatieMediaLibraryFileUpload::make('image')->label('Foto'),
                 TextInput::make('name')->label('Nama')->required()->maxLength(255),
                 MarkdownEditor::make('description')->label('Deskripsi')->required(),
-            ])->columns(1);
+            ]);
     }
 
     public static function table(Table $table): Table

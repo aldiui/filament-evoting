@@ -26,17 +26,13 @@ class AgendaResource extends Resource
 
     protected static ?string $slug = 'agenda';
 
-    public static function form(Form $form): Form
-    {
-        return $form
-            ->schema([
-                //
-            ]);
-    }
-
     public static function table(Table $table): Table
     {
         return $table
+            ->contentGrid([
+                'md' => 2,
+                'xl' => 3,
+            ])
             ->columns([
                 TextColumn::make("ormawa.name")->label('Ormawa')->sortable()->searchable(),
                 TextColumn::make("tanggal")->label('Tanggal')->sortable()->searchable(),
@@ -62,7 +58,6 @@ class AgendaResource extends Resource
     {
         return [
             'index' => Pages\ListAgendas::route('/'),
-            'edit' => Pages\EditAgenda::route('/{record}/edit'),
         ];
     }
 }

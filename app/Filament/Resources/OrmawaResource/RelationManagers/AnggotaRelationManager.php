@@ -29,8 +29,7 @@ class AnggotaRelationManager extends RelationManager
                 TextInput::make('jabatan')
                     ->required()
                     ->maxLength(255),
-            ])
-            ->columns(1);
+            ]);
     }
 
     public function table(Table $table): Table

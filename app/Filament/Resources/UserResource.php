@@ -58,7 +58,7 @@ class UserResource extends Resource
                     ->required(),
                 TextInput::make('password')->password()->label('Password')->dehydrateStateUsing(fn ($state) => bycyptr($state))
                 ->dehydrated(fn ($state) => filled($state))->maxLength(255),
-            ])->columns(1);
+            ]);
     }
 
     public static function table(Table $table): Table

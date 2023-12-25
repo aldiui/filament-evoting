@@ -27,4 +27,12 @@ class ListAgendas extends ListRecords
         });
         return $result;
     }
+
+    protected function getTableContentGrid(): ?array
+    {
+        return [
+            'md' => 2,
+            'xl' => 3,
+        ];
+    }
 }

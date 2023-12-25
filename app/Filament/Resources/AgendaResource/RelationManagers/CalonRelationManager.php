@@ -39,7 +39,7 @@ class CalonRelationManager extends RelationManager
                 TextInput::make('no_paslon')->label("Nomor Paslon")->numeric()->required(),
                 TextInput::make('visi')->required()->maxLength(255),
                 MarkdownEditor::make('misi')->required(),
-            ])->columns(1);
+            ]);
     }
 
     public function table(Table $table): Table
