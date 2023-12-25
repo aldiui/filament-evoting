@@ -55,14 +55,14 @@ class CalonRelationManager extends RelationManager
 
                             if (!Carbon::parse($cekAgenda->tanggal)->isSameDay(now()) ){
                                 return Notification::make()
-                                    ->title('Maaf anda belum waktunya untuk memilih')
+                                    ->title('Maaf, Anda belum waktunya untuk memilih')
                                     ->danger()
                                     ->send();
                             }
                             
                             if (!Carbon::now()->isBetween($cekAgenda->jam_mulai, $cekAgenda->jam_selesai)){
                                 return Notification::make()
-                                    ->title('Maaf anda berada diluar jam untuk memilih')
+                                    ->title('Maaf, Anda berada di luar jam untuk memilih')
                                     ->danger()
                                     ->send();
                             }
