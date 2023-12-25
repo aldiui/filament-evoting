@@ -2,6 +2,7 @@
 
 namespace App\Filament\User\Resources\AgendaResource\RelationManagers;
 
+use Carbon\Carbon;
 use Filament\Tables;
 use App\Models\Calon;
 use App\Models\Suara;
@@ -52,7 +53,21 @@ class CalonRelationManager extends RelationManager
                         if ($cekCalon) {
                             $cekAgenda = Agenda::find($cekCalon->agenda_id);
 
-                            if ($cekAgenda && $cekAgenda->status == 1) {
+                            if (!Carbon::parse($cekAgenda->tanggal)->isSameDay(now()) ){
+                                return Notification::make()
+                                    ->title('Maaf anda belum waktunya untuk memilih')
+                                    ->danger()
+                                    ->send();
+                            }
+                            
+                            if (!Carbon::now()->isBetween($cekAgenda->jam_mulai, $cekAgenda->jam_selesai)){
+                                return Notification::make()
+                                    ->title('Maaf anda berada diluar jam untuk memilih')
+                                    ->danger()
+                                    ->send();
+                            }
+
+                            if ($cekAgenda->status == 1) {
                                 $cekSuara = Suara::where(['user_id' => $userId])->get();
                                 if ($cekSuara->isEmpty()) {
                                         $user = new Suara();
@@ -60,7 +75,7 @@ class CalonRelationManager extends RelationManager
                                         $user->calon_id = $calonId;
                                         $user->save();
 
-                                        Notification::make()
+                                        return Notification::make()
                                         ->title('Anda berhasil memilih')
                                         ->success()
                                         ->send();
@@ -76,7 +91,7 @@ class CalonRelationManager extends RelationManager
                                                 $user->calon_id = $calonId;
                                                 $user->save();
 
-                                                Notification::make()
+                                                return Notification::make()
                                                 ->title('Anda berhasil memilih')
                                                 ->success()
                                                 ->send();
@@ -85,7 +100,7 @@ class CalonRelationManager extends RelationManager
                                     }
                                 }
 
-                                Notification::make()
+                                return Notification::make()
                                     ->title('Maaf anda sudah memilih')
                                     ->danger()
                                     ->send();
@@ -102,7 +117,7 @@ class CalonRelationManager extends RelationManager
                                         $user->calon_id = $calonId;
                                         $user->save();
 
-                                        Notification::make()
+                                        return Notification::make()
                                             ->title('Anda berhasil memilih')
                                             ->success()
                                             ->send();
@@ -118,7 +133,7 @@ class CalonRelationManager extends RelationManager
                                                     $user->calon_id = $calonId;
                                                     $user->save();
 
-                                                    Notification::make()
+                                                    return Notification::make()
                                                         ->title('Anda berhasil memilih')
                                                         ->success()
                                                         ->send();
@@ -128,7 +143,7 @@ class CalonRelationManager extends RelationManager
                                     }
 
                                     
-                                    Notification::make()
+                                    return Notification::make()
                                         ->title('Maaf anda sudah memilih')
                                         ->danger()
                                         ->send();
