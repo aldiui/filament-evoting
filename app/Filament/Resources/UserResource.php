@@ -56,7 +56,7 @@ class UserResource extends Resource
                     ])
                     ->searchable()
                     ->required(),
-                TextInput::make('password')->password()->label('Password')->dehydrateStateUsing(fn ($state) => bycyptr($state))
+                TextInput::make('password')->password()->label('Password')->dehydrateStateUsing(fn ($state) => bcrypt($state))
                 ->dehydrated(fn ($state) => filled($state))->maxLength(255),
             ]);
     }
