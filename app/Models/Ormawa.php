@@ -18,7 +18,8 @@ class Ormawa extends Model implements HasMedia
     use HasFactory;
     use InteractsWithMedia;
 
-    protected $guarded = [];
+    protected $guarded = ["id"];
+
 
     public function registerMediaConversions(Media $media = null): void
     {
